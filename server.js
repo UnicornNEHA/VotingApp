@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+app.get('/', (req, res) => {
+  res.send('Voting App Backend is running');
+});
+
+
 const db = require('./db');
 require('dotenv').config();
 
@@ -21,4 +26,5 @@ app.use('/candidate', candidateRoutes);
 
 app.listen(PORT, ()=>{
     console.log('Listening on Port 3000');
+
 })
